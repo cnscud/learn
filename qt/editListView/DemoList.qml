@@ -80,10 +80,6 @@ ColumnLayout {
                             }
                         }
 
-                        onAccepted: {
-
-                        }
-
                         onEditingFinished: {
                             model.description = textinput.text
 
