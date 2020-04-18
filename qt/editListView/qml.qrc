@@ -4,5 +4,7 @@
         <file>DemoList.qml</file>
         <file>MyModel.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>DemoList_v1.qml</file>
+        <file>DemoListByCode.qml</file>
     </qresource>
 </RCC>
