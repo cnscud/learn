@@ -73,6 +73,7 @@ ColumnLayout {
                         visible: dragRect.ListView.isCurrentItem
                         enabled: dragRect.ListView.isCurrentItem
                         focus: true
+                        selectByMouse: true
 
                         onFocusChanged: {
                             if(focus){

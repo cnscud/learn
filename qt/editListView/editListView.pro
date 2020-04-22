@@ -31,3 +31,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     README.md
+
+QMAKE_LFLAGS_RELEASE = /INCREMENTAL:NO /DEBUG
+

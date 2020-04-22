@@ -1,17 +1,19 @@
 import QtQuick 2.0
 
 ListModel {
+
+
     ListElement {
-        description: "Wash the car"
+        description: "1 Wash the car 1"
         done: true
     }
     ListElement {
-        description: "Read a book"
+        description: "2 Read a book 2"
         done: false
     }
 
     ListElement {
-        description: "Buy a cup"
+        description: "3 Buy a cup 3"
         done: false
     }
 

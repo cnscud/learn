@@ -8,7 +8,7 @@ Window {
     title: qsTr("Hello World")
 
 
-    DemoList {
+    EditDragList {
         anchors.centerIn: parent
         width: parent.width
         height: parent.height

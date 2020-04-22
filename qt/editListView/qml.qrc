@@ -6,5 +6,8 @@
         <file>qtquickcontrols2.conf</file>
         <file>DemoList_v1.qml</file>
         <file>DemoListByCode.qml</file>
+        <file>EditDragList.qml</file>
+        <file>EditDragList_onlyListView.qml</file>
+        <file>DesignTest.qml</file>
     </qresource>
 </RCC>
