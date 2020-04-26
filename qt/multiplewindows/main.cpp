@@ -37,7 +37,6 @@ int main(int argc, char *argv[]) {
     if (listView1){
         qDebug("find listview1");
         listView1->setProperty("model", QVariant::fromValue(model1));
-        listView1->polish();
     }
 
     QQuickItem *rootWindow1 = (QQuickItem*)rootObj1;
@@ -45,6 +44,7 @@ int main(int argc, char *argv[]) {
 
     //设置属性, 方便区分: 后期找窗口的时候
     rootWindow1->setProperty("keyname", "index1");
+    rootWindow1->setProperty("x", 100);
 
     //看看变了吗?
     qDebug("window keyname value: %s" , qPrintable(rootWindow1->property("keyname").toString()));
@@ -61,8 +61,13 @@ int main(int argc, char *argv[]) {
     if (listView2){
         qDebug("find listview 2");
         listView2->setProperty("model", QVariant::fromValue(model2));
-        listView2->polish();
     }
+
+    QQuickItem *rootWindow2 = (QQuickItem*)rootObj2;
+
+    //设置属性, 方便区分: 后期找窗口的时候
+    rootWindow2->setProperty("keyname", "index2");
+    rootWindow2->setProperty("x", 500);
 
 
     /*
