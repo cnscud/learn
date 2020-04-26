@@ -28,7 +28,6 @@ Rectangle {
                 id: mouseArea
                 width: itemRoot.width
 
-                //测试高亮项, 所以+2
                 height: itemRect.height
                 anchors {
                     left: parent.left
@@ -55,7 +54,7 @@ Rectangle {
                     console.log(("MouseArea Click ListView isCurrentItem: "
                                  + ListView.isCurrentItem))
 
-                    // 在itemRect的 onFocusChanged 中设置了, 此处不需要了
+                    // 在onFocusChanged 中设置了, 此处不需要了
                     //textinput.focus = true;
                 }
 
@@ -82,6 +81,7 @@ Rectangle {
                 }
 
                 //FIXME: 目前某行处于编辑状态, 然后其他行拖动和此行交换, 则会crash, 原因待查 2020.4.21
+                //目前解决的思路: 一旦开始拖拽, 则退出编辑状态
                 drag.onActiveChanged: {
                     if (mouseArea.drag.active) {
                         //开始拖动时: 设置当前Item为空
@@ -124,15 +124,6 @@ Rectangle {
                         }
                     }
 
-
-                    //激活输入框焦点
-                    /*
-                    onFocusChanged: {
-                        if (focus) {
-                            console.debug("got focus itemRect")
-                            textinput.focus = true
-                        }
-                    }*/
 
                     CheckBox {
                         id: chkbox
@@ -286,9 +277,6 @@ Rectangle {
             //默认焦点
             focus: true
 
-            //高亮显示区域: for debug
-            //highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
-
             spacing: 0
         }
     }
@@ -310,7 +298,7 @@ Rectangle {
 
             onClicked: {
                 var c = listView.model.model.rowCount()
-                //插入
+                //插入在第一个
                 listView.model.model.insert(0, {
                                                 "description": "Buy a new book " + (c + 1),
                                                 "done": false
